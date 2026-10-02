@@ -5,13 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Title.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/KeyMouse.unity
     guid: e6001454deeecfd43bb2ba299bbd609b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Steering.unity
     guid: 7b3a358a2891d8744835f275cd630dc0
   m_configObjects:
