@@ -8,6 +8,7 @@ public class CamController : MonoBehaviour
 
     private float roty = 180f;
     private float posy = 1.5f;
+    private Vector3 vpos;
 
     // Start is called before the first frame update
     void Start()
@@ -18,8 +19,9 @@ public class CamController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        camparent.transform.rotation = Quaternion.Euler(0, roty, 0);
-        camparent.transform.position = new Vector3(0, posy, 0);
+        vpos.Set(0f, posy, 0f);
+        camparent.transform.rotation = Quaternion.Euler(0f, roty, 0f);
+        camparent.transform.position = vpos;
     }
 
     public void SetPan(float angle){
