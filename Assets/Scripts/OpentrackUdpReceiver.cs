@@ -9,12 +9,12 @@ public class OpentrackUdpReceiver : MonoBehaviour {
     private IPEndPoint remoteEndPoint;
     private const int PORT = 4242;
 
-    private double yaw = 0d;
-    private double pitch = 0d;
-    private double roll = 0d;
     private double x = 0d;
     private double y = 0d;
     private double z = 0d;
+    private double yaw = 0d;
+    private double pitch = 0d;
+    private double roll = 0d;
 
      void Start(){
 
@@ -39,18 +39,27 @@ public class OpentrackUdpReceiver : MonoBehaviour {
         byte[] data = udpClient.Receive(ref remoteEndPoint);
 
         if(data.Length >= 48){
-            yaw = BitConverter.ToDouble(data, 0);
-            pitch = BitConverter.ToDouble(data, 8);
-            roll = BitConverter.ToDouble(data, 16);
-            x = BitConverter.ToDouble(data, 24);
-            y = BitConverter.ToDouble(data, 32);
-            z = BitConverter.ToDouble(data, 40);
+            x = BitConverter.ToDouble(data, 0);
+            y = BitConverter.ToDouble(data, 8);
+            z = BitConverter.ToDouble(data, 16);
+            yaw = BitConverter.ToDouble(data, 24);
+            pitch = BitConverter.ToDouble(data, 32);
+            roll = BitConverter.ToDouble(data, 40);
         }
     }
 
-
     void OnApplicationQuit(){
         udpClient.Close();
+    }
+
+    public float GetX(){
+        return (float)x;
+    }
+    public float GetY(){
+        return (float)y;
+    }
+    public float GetZ(){
+        return (float)z;
     }
 
     public float GetYaw(){
@@ -61,14 +70,5 @@ public class OpentrackUdpReceiver : MonoBehaviour {
     }
     public float GetRoll(){
         return (float)roll;
-    }
-    public float GetX(){
-        return (float)x;
-    }
-    public float GetY(){
-        return (float)y;
-    }
-    public float GetZ(){
-        return (float)z;
     }
 }
