@@ -7,7 +7,6 @@ public class LookController : MonoBehaviour {
     protected Animator animator;
     private Transform neck;
 
-    private GameObject lptarget;
     private GameObject udprec;
     private OpentrackUdpReceiver udpreceiver;
 
@@ -17,8 +16,6 @@ public class LookController : MonoBehaviour {
         vrminstance = GameObject.Find("VRM1");
         animator = vrminstance.GetComponent<Animator>();
         neck = animator.GetBoneTransform(HumanBodyBones.Neck);
-
-        lptarget = GameObject.Find("LookParent");
 
         udprec = GameObject.Find("UDP");
         udpreceiver = udprec.GetComponent<OpentrackUdpReceiver>();
