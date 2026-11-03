@@ -169,7 +169,7 @@
       "source": "embedded",
       "dependencies": {
         "com.unity.timeline": "1.7.6",
-        "com.vrmc.gltf": "0.131.2"
+        "com.vrmc.gltf": "0.131.4"
       }
     },
     "com.unity.modules.ai": {

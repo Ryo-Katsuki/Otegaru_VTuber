@@ -52,6 +52,6 @@ public class ExpressionController : MonoBehaviour
         runtimeExpression.SetWeight(ExpressionKey.Aa, mouthweight);
         runtimeExpression.SetWeight(ExpressionKey.Blink, blinkweight);
         runtimeExpression.SetWeight(ExpressionKey.Neutral, 1f);
-        
+
     }
 }

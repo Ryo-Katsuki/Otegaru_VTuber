@@ -27,6 +27,8 @@ public class MicController : MonoBehaviour
 
         if(Microphone.devices.Length == 0){
             return;
+        }else{
+            SetMicIndex(0);
         }
 
         foreach(string device in Microphone.devices){
@@ -85,7 +87,7 @@ public class MicController : MonoBehaviour
         micIndex = index;
 
         deviceName = Microphone.devices[micIndex];
-        
+
         microphoneClip = Microphone.Start(deviceName, true, 10, 44100);
         isRecoding = true;
     }
@@ -94,7 +96,7 @@ public class MicController : MonoBehaviour
         if(isRecoding){
             Microphone.End(deviceName);
             isRecoding = false;
-            
+
         }
     }
 }
