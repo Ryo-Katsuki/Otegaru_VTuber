@@ -5,6 +5,7 @@ using UnityEngine;
 public class CamController : MonoBehaviour
 {
     private GameObject camparent;
+    private Camera cam;
 
     private float roty = 180f;
     private float posy = 1.5f;
@@ -14,6 +15,7 @@ public class CamController : MonoBehaviour
     void Start()
     {
         camparent = GameObject.Find("CameraParent");
+        cam = GetComponent<Camera>();
     }
 
     // Update is called once per frame
@@ -22,6 +24,18 @@ public class CamController : MonoBehaviour
         vpos.Set(0f, posy, 0f);
         camparent.transform.rotation = Quaternion.Euler(0f, roty, 0f);
         camparent.transform.position = vpos;
+    }
+
+    public void ChangeColor(int index){
+        if (index == 0){
+            cam.backgroundColor = Color.red;
+        }
+        else if (index == 1){
+            cam.backgroundColor = Color.green;
+        }
+        else if (index == 2){
+            cam.backgroundColor = Color.blue;
+        }
     }
 
     public void SetPan(float angle){
