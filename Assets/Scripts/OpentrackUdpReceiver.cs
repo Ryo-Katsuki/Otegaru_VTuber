@@ -48,7 +48,7 @@ public class OpentrackUdpReceiver : MonoBehaviour {
         }
     }
 
-    void OnApplicationQuit(){
+    void OnDestroy(){
         udpClient.Close();
     }
 
